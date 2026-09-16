@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-brand-50: #ecf8f3;
+  --color-brand-100: #d2efe3;
+  --color-brand-200: #a6dec8;
+  --color-brand-300: #6fc6a7;
+  --color-brand-400: #3aa882;
+  --color-brand-500: #188c67;
+  --color-brand-600: #0b6b4f;
+  --color-brand-700: #0a5842;
+  --color-brand-800: #0b4636;
+  --color-brand-900: #0a3a2d;
+  --color-gold-500: #c8962e;
+}
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body { @apply bg-slate-50 text-slate-800 antialiased; }
+  ::selection { background: var(--color-brand-100); }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 shadow-xs
+      focus:border-brand-500 focus:ring-3 focus:ring-brand-100 focus:outline-none disabled:bg-slate-50 disabled:text-slate-500;
+  }
+  .label { @apply mb-1.5 block text-xs font-medium text-slate-600; }
+  .card { @apply rounded-xl border border-slate-200 bg-white shadow-xs; }
+  .th { @apply px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 whitespace-nowrap; }
+  .td { @apply px-3 py-2.5 text-[13px] text-slate-700 whitespace-nowrap; }
+}
+
+.scrollbar-thin::-webkit-scrollbar { height: 8px; width: 8px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+.recharts-wrapper *:focus { outline: none; }
+
+@media print {
+  body * { visibility: hidden !important; }
+  .print-area, .print-area * { visibility: visible !important; }
+  .print-area { position: fixed; inset: 0; border: 0 !important; padding: 24px !important; }
+}
