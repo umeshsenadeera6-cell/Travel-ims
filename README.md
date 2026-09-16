@@ -88,3 +88,4 @@ Component → hook (useServiceQuery) → service (inquiryService…) → HTTP cl
 
 Types in `src/types` can be used as the API contract.
 # travel_ims
+# Travel-ims
